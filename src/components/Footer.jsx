@@ -25,6 +25,7 @@ const Footer = () => (
           <li><a href="/coming-soon" className="hover:text-green-700">Superadmin</a></li>
           <li><a href="/coming-soon" className="hover:text-green-700">Owner</a></li>
           <li><a href="/coming-soon" className="hover:text-green-700">Student</a></li>
+            <li><a href="/team" className="text-gray-700 hover:text-green-700 block mb-2">Team</a></li>
         </ul>
       </div>
       {/* Company */}
@@ -35,7 +36,7 @@ const Footer = () => (
           <li><a href="/coming-soon" className="hover:text-green-700">Contact</a></li>
           <li><a href="/coming-soon" className="hover:text-green-700">Blog</a></li>
           <li><a href="/coming-soon" className="hover:text-green-700">Careers</a></li>
-          <li><a href="/coming-soon" className="hover:text-green-700">Team</a></li>
+          <li><a href="/team" className="hover:text-green-700">Team</a></li>
           <li><a href="/coming-soon" className="hover:text-green-700">Faqs</a></li>
         </ul>
       </div>

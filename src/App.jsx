@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import CreateAccount from './pages/CreateAccount';
 import HowItWorks from './pages/HowItWorks';
 import './App.css';
+import Team from './pages/Team';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="*" element={<ComingSoon />} />
           {/* Catch hash routes */}
           <Route path="#*" element={<ComingSoon />} />
+            <Route path="/team" element={<Team />} />
         </Routes>
       </main>
       <Footer />

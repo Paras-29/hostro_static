@@ -11,6 +11,7 @@ const Navbar = () => (
           <li><Link to="/how-it-works" className="text-gray-700 hover:text-green-700 font-medium">How It Works</Link></li>
           <li><Link to="/faqs" className="text-gray-700 hover:text-green-700 font-medium">FAQs</Link></li>
           <li><Link to="/contact" className="text-gray-700 hover:text-green-700 font-medium">Contact</Link></li>
+            <li><Link to="/team" className="text-gray-700 hover:text-green-700 font-medium">Team</Link></li>
         </ul>
         <Link to="/login" className="ml-4 px-4 py-2 rounded bg-green-600 text-white font-semibold shadow hover:bg-green-700 transition">Login</Link>
       </div>
