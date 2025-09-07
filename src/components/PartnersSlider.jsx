@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const partners = [
   {
@@ -49,6 +49,8 @@ const cardsPerView = 4;
 
 export default function PartnersSlider() {
   const [start, setStart] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
 
   const next = () => {
     setStart((prev) => (prev + cardsPerView) % partners.length);
@@ -56,6 +58,15 @@ export default function PartnersSlider() {
   const prev = () => {
     setStart((prev) => (prev - cardsPerView + partners.length) % partners.length);
   };
+
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(next, 1000);
+    } else if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [isPaused]);
 
   const visible = [];
   for (let i = 0; i < cardsPerView; i++) {
@@ -68,7 +79,7 @@ export default function PartnersSlider() {
       <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Collaborating for Better Living</h2>
       <p className="text-gray-600 mb-6">We team up with organizations that share our mission to elevate PG & co-living.</p>
       <div className="text-sm text-gray-500 mb-4">Auto-scrolling &middot; hover to pause</div>
-      <div className="relative">
+      <div className="relative" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
         <div className="flex gap-6 overflow-x-auto pb-2">
           {visible.map((p, idx) => (
             <div key={idx} className="min-w-[260px] bg-white border rounded-2xl p-6 flex flex-col items-start shadow hover:shadow-lg transition">
@@ -78,11 +89,12 @@ export default function PartnersSlider() {
             </div>
           ))}
         </div>
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 flex gap-2">
-          <button onClick={prev} className="bg-white border rounded-full p-2 shadow hover:bg-green-50"><svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg></button>
-          <button onClick={next} className="bg-white border rounded-full p-2 shadow hover:bg-green-50"><svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div className="w-full flex justify-center mt-6">
+          <button onClick={prev} className="bg-white border rounded-full p-2 shadow hover:bg-green-50 mx-2"><svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg></button>
+          <button onClick={next} className="bg-white border rounded-full p-2 shadow hover:bg-green-50 mx-2"><svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
         </div>
       </div>
     </section>
   );
 }
+// ...existing code...
