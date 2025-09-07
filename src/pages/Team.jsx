@@ -110,7 +110,7 @@ const Team = () => {
 
           {/* Engineering & Design Section */}
           <h2 className="text-2xl sm:text-3xl font-bold mt-12 mb-8 text-left">Engineering & Design</h2>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-start">
             {engineeringDesign.map((member, idx) => (
               <div key={idx} className="bg-white rounded-xl border border-gray-300 p-4 sm:p-6 flex flex-col sm:flex-row items-center min-h-[180px] shadow-sm w-full max-w-xl mb-8">
                 <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-6 flex items-center justify-center">
@@ -150,7 +150,7 @@ const Team = () => {
 
           {/* Operations & Support Section */}
           <h2 className="text-2xl sm:text-3xl font-bold mt-12 mb-8 text-left">Operations & Support</h2>
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col justify-start">
             {operationsSupport.map((member, idx) => (
               <div key={idx} className="bg-white rounded-xl border border-gray-300 p-4 sm:p-6 flex flex-col sm:flex-row items-center min-h-[180px] shadow-sm w-full max-w-xl mb-8">
                 <div className="flex-shrink-0 mb-4 sm:mb-0 sm:mr-6 flex items-center justify-center">
