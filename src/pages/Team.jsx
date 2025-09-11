@@ -1,14 +1,14 @@
 // Additional team sections
 const engineeringDesign = [
   {
-    name: "Dharmendra Pandit",
+    name: "Paras Gulvanshi",
     title: "Technical Head",
     description:
       "Leads platform architecture, reliability, DevOps, and developer velocity.",
-    tags: ["Next.js", "Node.js", "DevOps"],
+    tags: ["ReactJS", "Next.js", "Node.js", "DevOps"],
     linkedin: "#",
     instagram: "#",
-    image: "./assets/team/t3.jpg", // Replace with actual image path
+    image: "./assets/team/photo.jpeg", // Replace with actual image path
   },
 ];
 
